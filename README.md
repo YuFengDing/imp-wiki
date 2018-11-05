@@ -1,5 +1,7 @@
 # imp-wiki
-
+```
+记录生活。
+```
 ## Project setup
 ```
 npm install
