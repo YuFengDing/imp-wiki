@@ -9,6 +9,4 @@ const goRoute = (vue, name, isSave) => {
     })
   }
 }
-module.exports = {
-  goRoute
-}
+export default goRoute

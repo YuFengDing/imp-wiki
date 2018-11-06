@@ -27,7 +27,7 @@
     </div>
 </template>
 <script>
-import { mapGetters, mapActions, mapMutations } from "vuex";
+import { mapActions } from "vuex";
 export default {
     data(){
         return {}
@@ -40,7 +40,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
 .leftBar {
   display: flex;
   flex-direction: column;

@@ -33,12 +33,11 @@ export default {
   },
   methods: {},
   created: function() {
-    console.log(this.content);
   }
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
+@import '../../../assets/style/font-family.less';
 .wrapper {
   width: 750px;
   height: 260px;

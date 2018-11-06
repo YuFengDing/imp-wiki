@@ -10,7 +10,6 @@ Axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
 // POST传参序列化(添加请求拦截器)
 Axios.interceptors.request.use(
   config => {
-    console.log('config: ', config.headers)
     // 在发送请求之前做某件事
     if (config.headers['Content-Type'] === 'application/json') {
       config.data = JSON.stringify(config.data)
@@ -43,7 +42,7 @@ Axios.interceptors.response.use(response => {
 })
 let request = config => {
   if (config.mock) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(resolve(config.mock), 500)
     })
   } else {

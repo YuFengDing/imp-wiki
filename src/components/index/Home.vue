@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-import { goRoute } from "@/assets/utils/utils";
+import goRoute from "../../assets/utils/utils";
 import Pover from "./unit/Pover";
 import { setTimeout, clearTimeout } from "timers";
 export default {
@@ -80,7 +80,8 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
+@import '../../assets/style/font-family.less';
+
 .mainWrapper {
   font-size: 15px;
   .title {

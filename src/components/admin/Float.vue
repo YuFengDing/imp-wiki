@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions, mapMutations } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   components: {},
   props: {},
@@ -28,7 +28,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
 .wrapper {
   // position: absolute;
   // left: 3rem;

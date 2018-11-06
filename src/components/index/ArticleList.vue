@@ -7,6 +7,7 @@
 </template>
 <script>
 import articleItem from '@/components/index/unit/articleItem'
+
 export default {
   components: { articleItem },
   data () {
@@ -27,5 +28,6 @@ export default {
 }
 </script>
 <style>
+@import '../../assets/style/font-family.less';
 /* @import "../../node_modules/simplemde/dist/simplemde.min.css"; */
 </style>

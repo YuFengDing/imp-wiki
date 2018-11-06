@@ -23,7 +23,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
 .wrapper {
   .pover {
     position: absolute;
@@ -39,7 +38,7 @@ export default {
     left: -145px;
     top: 60px;
     box-shadow: 0.2em 0.1em 0.1em #444242;
-    background: url('../../assets/common/images/weChat.jpg') no-repeat;
+    background: url('../../../assets/img/weChat.jpg') no-repeat;
     background-size: contain;
     }
   .rectangle::before {

@@ -85,23 +85,24 @@ export default {
       this.init.initTag = tag;
     },
     async save(item) {
+        let data = {};
+        let res;
       switch (item) {
         case "a":
-          let data = {};
           data.title = this.newTitle;
           data.content = this.content;
           data.tags = this.init.initTag;
-          let res =  await api.addArticle(data)
+          res =  await api.addArticle(data)
           this.$message.success(res.message)
           break;
       }
     },
     async addTag() {
       if (this.newTag) {
-        let result = await api.addTag({
-          tag: this.newTag,
-          author: localStorage.getItem("account") || "imp"
-        });
+        // let result = await api.addTag({
+        //   tag: this.newTag,
+        //   author: localStorage.getItem("account") || "imp"
+        // });
         this.tagList.push(this.newTag);
         this.init.initTag = this.newTag;
         this.newTag = "";
@@ -139,7 +140,6 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "@/assets/style/variable.less";
 .wrapper {
   display: flex;
   .rightContent {
