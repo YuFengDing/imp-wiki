@@ -14,7 +14,7 @@
       </div>
       <div class="content" v-html="html" />
     </div>
-    <div class="details">
+    <div class="details" @click="goDetails">
       全文阅读
     </div>
   </div>
@@ -31,7 +31,11 @@ export default {
       return md().render(this.content.content);
     }
   },
-  methods: {},
+  methods: {
+    goDetails(){
+      this.$router.push('/Article')
+    }
+  },
   created: function() {
   }
 };
@@ -43,7 +47,9 @@ export default {
   height: 260px;
   margin: 30px auto 40px;
   .details {
-    float: right
+    float: right;
+    user-select: none;
+    cursor: pointer;
   }
   .item {
     width: 750px;
