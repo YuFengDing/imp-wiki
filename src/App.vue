@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <left-nav/>
-    <main-content/>
+    <right-main/>
   </div>
 </template>
 <script>
 import LeftNav from '@/components/home/LeftNav.vue';
-import MainContent from '@/components/home/MainContent.vue';
+import RightMain from '@/components/home/RightMain.vue';
 export default {
   name: 'App',
   components:{
     LeftNav,
-    MainContent,
+    RightMain,
   }
 }
 </script>

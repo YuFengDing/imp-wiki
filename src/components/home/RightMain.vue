@@ -1,5 +1,5 @@
 <template>
-    <div class="mainContent">
+    <div class="main">
         <router-view></router-view>
         <footer>Copyright © 2018 dyf</footer>
     </div>
@@ -10,7 +10,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .mainContent {
+    .main {
         display: flex;
         flex: 1;
     }
