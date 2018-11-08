@@ -3,22 +3,33 @@
         <header>
             <p>yfrz</p>
             <p>记录新发现</p>
+        <span class="collapse" @click="toggleCollapse" :class="{coll:collapse}">
+            <div></div>
+            <div></div>
+            <div></div>
+        </span>
         </header>
         <ul class="nav">
             <li v-for="(it,index) in navConfig" :key='index'>
-                {{it.label}}
+                {{it.parent.label}}
             </li>
         </ul>
     </div>
 </template>
 <script>
+import {mapGetters,mapActions} from 'vuex'
 export default {
     data(){
         return {
-            navConfig:[{label:'编程',value:'code'},{label:'杂谈',value:'talking'},{label:'相册',value:'ablumn'},{label:'多媒体',value:'media'}]
+            navConfig:[{parent:{label:'编程',value:'code'},children:[{parent:{label:'',value:''},children:[{}]},]}],
         }
     },
-    methods:{},
+    methods:{
+        ...mapActions(['toggleCollapse'])
+    },
+    computed:{
+        ...mapGetters(['collapse'])
+    },
     mounted:{
 
     }
@@ -33,6 +44,7 @@ export default {
     .size(100%, 150px);
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
     p {
       line-height: 30px;
       height: 30px;
@@ -46,10 +58,61 @@ export default {
     }
   }
   ul {
-      padding-left: 20px;
-      li {
-          font-size: 20px;
+    padding-left: 20px;
+    li {
+      font-size: 20px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .leftBox {
+    width: 100%;
+    height: 100px;
+    border: none;
+    header {
+      p:nth-child(2) {
+        text-align: left;
       }
+    }
+    ul {
+      display: none;
+    }
+    .collapse {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      position: absolute;
+      right: 15px;
+      bottom: 100px;
+      z-index: 9999;
+      div {
+        width: 20px;
+        height: 6px;
+        border-top: 1px solid black;
+        transition: 0.2s linear;
+      }
+    }
+    .coll {
+      div:nth-child(1) {
+        transform: rotate(-45deg);
+        transform-origin: 22px;
+        transition: 0.2s linear;
+        width: 20px;
+      }
+      div:nth-child(2) {
+        transform: rotate(-45deg);
+        transform-origin: 15px 15px;
+        border: transparent;
+        transition: 0.2s linear;
+      }
+      div:nth-child(3) {
+        transform: rotate(45deg);
+        transform-origin: 15px 1px;
+        transition: 0.2s linear;
+        width: 20px;
+      }
+    }
   }
 }
 </style>

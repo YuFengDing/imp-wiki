@@ -4,7 +4,7 @@ export default {
   [types.TEST]: (state) => {
     state.test = 'helllo world'
   },
-  [types.TOGGLE_RIGHT_SHOW]: (state) => {
-    state.isRightShow = !state.isRightShow
+  [types.TOGGLE_COLLAPSE]: (state) => {
+    state.collapse = !state.collapse
   }
 }

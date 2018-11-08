@@ -1,5 +1,5 @@
 export default {
-  isRightShow: state => {
-    return state.isRightShow
-  }
+  collapse: state => {
+    return state.collapse
+  },
 }
