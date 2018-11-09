@@ -10,18 +10,19 @@
         </span>
         </header>
         <ul class="nav">
-            <li v-for="(it,index) in navConfig" :key='index'>
-                {{it.parent.label}}
-            </li>
+            <nav-list :list='list'></nav-list>
         </ul>
     </div>
 </template>
 <script>
-import {mapGetters,mapActions} from 'vuex'
+import {mapGetters,mapActions} from 'vuex';
+import NavList from './NavList.vue';
+import list from '../../../../mocks/aside';
 export default {
     data(){
         return {
             navConfig:[{parent:{label:'编程',value:'code'},children:[{parent:{label:'',value:''},children:[{}]},]}],
+            list:list.result
         }
     },
     methods:{
@@ -32,6 +33,9 @@ export default {
     },
     mounted:{
 
+    },
+    components:{
+      NavList
     }
 }
 </script>

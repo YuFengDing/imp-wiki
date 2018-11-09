@@ -8,8 +8,8 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
-import LeftNav from '@/components/home/LeftNav.vue';
-import RightMain from '@/components/home/RightMain.vue';
+import LeftNav from '@/components/home/LeftNav/LeftNav.vue';
+import RightMain from '@/components/home/RightMain/RightMain.vue';
 export default {
   name: 'App',
   components:{
